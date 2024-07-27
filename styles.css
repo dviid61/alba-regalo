@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f2f2f2;
+}
+
+.gift-card {
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.gift-card:hover {
+  transform: scale(1.05);
+}
+
+.card-header {
+  background-color: #71d3cb;
+  color: white;
+  padding: 20px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.gift-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.message {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.card-footer {
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+}
+
+.card-footer p {
+  margin: 5px 0;
+}
+
+@media (max-width: 600px) {
+  .gift-card {
+      width: 100%;
+  }
+
+  .message {
+      font-size: 1em;
+  }
+}
+
+button {
+  width: 60%;
+  height: 60px;
+  font-family: sans-serif;
+  color: black;
+  font-size: 1.3em;
+  background-color: rgb(255, 203, 107);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}

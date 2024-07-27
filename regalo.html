@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva y Música</title>
+    <link rel="stylesheet" href="regalo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="letter">
+            <b>Para Alba,<br><br>
+            Antes que nada felicidades por tus 17 años 🎉<br><br>
+            Hoy es un día muy especial porque celebramos el cumpleaños de una persona que queremos muchísimo. Queremos aprovechar este momento para decirte lo mucho que significas para todos nosotros y cuánto valoramos tu amistad.
+            Estamos felices de poder celebrar este día contigo. <p style="color: #CA8787">Malena: Bueno yo no, pero ya lo celebraremos como toca, te quiero<333</p> 
+            
+            Desde que te conocimos, nuestra vida ha sido mucho más divertida y emocionante. Siempre sabes cómo sacarnos una sonrisa. Eres esa amiga que siempre está ahí, y que todo el mundo quisiera tener.<br><br>
+
+            A lo largo de estos años, hemos compartido tantos momentos juntos, las risas en clase, las fiestas, las quedadas. Gracias por ser parte de todos esos recuerdos y por hacerlos tan especiales. 💖<br></br>    
+
+            Ya sabes que eres muy importante para nosotros y te queremos muchísimo. Y como no, te quisimos dar esto como una muestra de agradecimiento. Pensamos que te haría ilusión y espramos que te guste...<br><br>
+            Pulsa el botón para comenzar la cuenta atrás.<br><br>
+            ¡Disfruta mucho tu regalo, nosotros también lo haremos!<br><br>
+            Con cariño,<br>
+            de tus amigos David y Malena 💖</b>
+        </div>
+        <button id="startButton">Regalo :)</button>
+        <div id="countdown" style="display: none;">10</div>
+    </div>
+    
+    <audio id="audio" src="audio.mp3" autoplay muted></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.container').classList.add('fade-in');
+            
+            // Intentar reproducir el audio con un retraso para sortear las restricciones del navegador
+            var audio = document.getElementById('audio');
+            setTimeout(function() {
+                audio.muted = false; // Desactivar el silencio
+                audio.play().catch(function(e) {
+                    console.log("User interaction required to play audio:", e);
+                });
+            }, 500); // Retraso breve para permitir la carga
+        });
+
+        document.getElementById('startButton').addEventListener('click', function() {
+            var countdownElement = document.getElementById('countdown');
+            var countdown = 10;
+
+            // Mostrar y actualizar cuenta regresiva
+            countdownElement.style.display = 'block';
+            var interval = setInterval(function() {
+                countdown--;
+                countdownElement.textContent = countdown;
+
+                // Redirigir cuando la cuenta regresiva llegue a 0
+                if (countdown <= 0) {
+                    clearInterval(interval);
+                    window.location.href = 'entradas.html';
+                }
+            }, 1000);
+
+            // Ocultar botón después de pulsar
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
